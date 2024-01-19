@@ -1,0 +1,231 @@
+<resources>
+    <dimen name="ted_picker_selected_image_height">90dp</dimen>
+    <dimen name="ted_picker_fab_elevation">8dp</dimen>
+    <dimen name="ted_picker_fab_size">60dp</dimen>
+    <dimen name="ted_picker_fab_press_translation_z">9dp</dimen>
+
+
+    <dimen name="ted_picker_camera_height">550dp</dimen>
+
+    <dimen name="heading1">18sp</dimen>
+    <dimen name="heading2">16sp</dimen>
+    <dimen name="text1">16sp</dimen>
+    <dimen name="text2">14sp</dimen>
+    <dimen name="text3">12sp</dimen>
+    <dimen name="margin_1">1dp</dimen>
+    <dimen name="margin_2">2dp</dimen>
+    <dimen name="margin_3">3dp</dimen>
+    <dimen name="margin_4">4dp</dimen>
+    <dimen name="margin_5">5dp</dimen>
+    <dimen name="margin_6">6dp</dimen>
+    <dimen name="margin_7">7dp</dimen>
+    <dimen name="margin_8">8dp</dimen>
+    <dimen name="margin_10">10dp</dimen>
+    <dimen name="margin_12">12dp</dimen>
+    <dimen name="margin_14">14dp</dimen>
+    <dimen name="margin_15">15dp</dimen>
+    <dimen name="margin_16">16dp</dimen>
+    <dimen name="margin_17">17dp</dimen>
+    <dimen name="margin_18">18dp</dimen>
+    <dimen name="margin_20">20dp</dimen>
+    <dimen name="margin_24">24dp</dimen>
+    <dimen name="margin_25">25dp</dimen>
+    <dimen name="margin_28">28dp</dimen>
+    <dimen name="margin_30">30dp</dimen>
+    <dimen name="margin_32">32dp</dimen>
+    <dimen name="margin_34">34dp</dimen>
+    <dimen name="margin_35">35dp</dimen>
+    <dimen name="margin_36">36dp</dimen>
+    <dimen name="margin_38">38dp</dimen>
+
+    <dimen name="margin_40">40dp</dimen>
+    <dimen name="margin_45">45dp</dimen>
+    <dimen name="margin_48">48dp</dimen>
+    <dimen name="margin_50">50dp</dimen>
+    <dimen name="margin_52">52dp</dimen>
+    <dimen name="margin_54">54dp</dimen>
+    <dimen name="margin_55">55dp</dimen>
+    <dimen name="margin_56">56dp</dimen>
+    <dimen name="margin_70">70dp</dimen>
+    <dimen name="margin_72">72dp</dimen>
+    <dimen name="margin_65">65dp</dimen>
+    <dimen name="margin_60">60dp</dimen>
+    <dimen name="margin_80">80dp</dimen>
+    <dimen name="margin_100">100dp</dimen>
+    <dimen name="margin_120">120dp</dimen>
+    <dimen name="margin_130">130dp</dimen>
+    <dimen name="margin_140">140dp</dimen>
+    <dimen name="margin_150">150dp</dimen>
+    <dimen name="margin_180">180dp</dimen>
+    <dimen name="margin_200">200dp</dimen>
+    <dimen name="margin_230">230dp</dimen>
+    <dimen name="margin_250">250dp</dimen>
+    <dimen name="margin_280">280dp</dimen>
+    <dimen name="margin_300">300dp</dimen>
+    <dimen name="margin_320">320dp</dimen>
+    <dimen name="margin_350">350dp</dimen>
+
+    <dimen name="textsize_20">20sp</dimen>
+    <dimen name="textsize_25">25sp</dimen>
+    <dimen name="textsize_30">30sp</dimen>
+    <dimen name="textsize_18">18sp</dimen>
+    <dimen name="textsize_22">22sp</dimen>
+    <dimen name="textsize_15">15sp</dimen>
+    <dimen name="textsize_14">14sp</dimen>
+    <dimen name="textsize_12">12sp</dimen>
+    <dimen name="textsize_13">13sp</dimen>
+    <dimen name="textsize_16">16sp</dimen>
+    <dimen name="textsize_45">45sp</dimen>
+    <dimen name="textsize_10">10sp</dimen>
+    <dimen name="textsize_8">8sp</dimen>
+
+    <dimen name="font_16">14.0sp</dimen>
+
+    <dimen name="text_size_minor">14sp</dimen>
+    <dimen name="text_size_medium">16sp</dimen>
+
+    <dimen name="fab_size">25dp</dimen>
+    <dimen name="fab_right_margin">6dp</dimen>
+
+    <dimen name="family_member_list_item_image_size">45dp</dimen>
+    <dimen name="family_member_list_item_height">72dp</dimen>
+    <dimen name="family_member_list_item_margin">16dp</dimen>
+
+    <dimen name="splash_activity_margin">16dp</dimen>
+
+    <dimen name="card_view_shadow_elvation">2dp</dimen>
+    <dimen name="fab_size_normal">56dp</dimen>
+    <dimen name="fab_icon_size">24dp</dimen>
+    <dimen name="fab_plus_icon_size">14dp</dimen>
+    <dimen name="fab_shadow_radius">9dp</dimen>
+    <dimen name="fab_stroke_width">0.5dp</dimen>
+
+
+    <dimen name="fab_size_mini">40dp</dimen>
+    <dimen name="fab_plus_icon_stroke">2dp</dimen>
+    <dimen name="fab_shadow_offset">3dp</dimen>
+    <dimen name="fab_actions_spacing">16dp</dimen>
+    <dimen name="fab_labels_margin">8dp</dimen>
+
+    <!-- ScanPadding must be half of polygonViewCircleWidth -->
+
+
+    <dimen name="radius_large">100dp</dimen>
+    <dimen name="margin_22">22dp</dimen>
+    <dimen name="margin_23">23dp</dimen>
+    <dimen name="margin_26">26dp</dimen>
+    <dimen name="margin_330">330dp</dimen>
+    <dimen name="margin_160">160dp</dimen>
+    <dimen name="margin_380">380dp</dimen>
+    <dimen name="margin_400">400dp</dimen>
+    <dimen name="margin_420">420dp</dimen>
+    <dimen name="margin_450">450dp</dimen>
+    <dimen name="actionBarSize">60dp</dimen>
+    <dimen name="margin_13">13sp</dimen>
+    <dimen name="margin_11">11dp</dimen>
+    <dimen name="margin_170">170dp</dimen>
+    <dimen name="margin_190">190dp</dimen>
+    <dimen name="margin_105">105dp</dimen>
+    <dimen name="margin_85">88dp</dimen>
+    <dimen name="margin_n6">-6dp</dimen>
+    <dimen name="margin_n2">-4dp</dimen>
+    <dimen name="margin_n10">-8dp</dimen>
+    <dimen name="margin_n94dp">-90dp</dimen>
+    <dimen name="margin_n12">-12dp</dimen>
+    <dimen name="margin_n18">-18dp</dimen>
+    <dimen name="margin_n26">-26dp</dimen>
+    <dimen name="margin_n28">-28dp</dimen>
+    <dimen name="margin_165">165dp</dimen>
+    <dimen name="margin_n30">-30dp</dimen>
+    <dimen name="margin_n32">-32dp</dimen>
+    <dimen name="margin_175">175dp</dimen>
+    <dimen name="margin_n40">-42dp</dimen>
+    <dimen name="margin_125">125dp</dimen>
+    <dimen name="margin_275">275dp</dimen>
+    <dimen name="margin_260">260dp</dimen>
+    <dimen name="margin_94">94dp</dimen>
+    <dimen name="margin_225">225dp</dimen>
+    <dimen name="margin_375">375dp</dimen>
+    <dimen name="margin_235">225dp</dimen>
+
+
+
+
+    <dimen name="dim_1">1dp</dimen>
+    <dimen name="dim_2">2dp</dimen>
+    <dimen name="dim_3">3dp</dimen>
+    <dimen name="dim_4">4dp</dimen>
+    <dimen name="dim_5">5dp</dimen>
+    <dimen name="dim_6">6dp</dimen>
+    <dimen name="dim_7">7dp</dimen>
+    <dimen name="dim_8">8dp</dimen>
+    <dimen name="dim_9">9dp</dimen>
+    <dimen name="dim_10">10dp</dimen>
+    <dimen name="dim_12">12dp</dimen>
+    <dimen name="dim_14">14dp</dimen>
+    <dimen name="dim_15">15dp</dimen>
+    <dimen name="dim_16">16dp</dimen>
+    <dimen name="dim_17">17dp</dimen>
+    <dimen name="dim_18">18dp</dimen>
+    <dimen name="dim_20">20dp</dimen>
+    <dimen name="dim_23">23dp</dimen>
+    <dimen name="dim_24">24dp</dimen>
+    <dimen name="dim_29">29dp</dimen>
+    <dimen name="dim_30">30dp</dimen>
+    <dimen name="dim_32">32dp</dimen>
+    <dimen name="dim_35">35dp</dimen>
+    <dimen name="dim_34">34dp</dimen>
+    <dimen name="dim_25">25dp</dimen>
+    <dimen name="dim_40">40dp</dimen>
+    <dimen name="dim_45">45dp</dimen>
+    <dimen name="dim_48">48dp</dimen>
+    <dimen name="dim_50">50dp</dimen>
+    <dimen name="dim_60">60dp</dimen>
+    <dimen name="dim_70">70dp</dimen>
+    <dimen name="dim_80">80dp</dimen>
+    <dimen name="dim_90">90dp</dimen>
+    <dimen name="dim_100">100dp</dimen>
+    <dimen name="dim_120">120dp</dimen>
+    <dimen name="dim_130">130dp</dimen>
+    <dimen name="dim_140">140dp</dimen>
+    <dimen name="dim_150">150dp</dimen>
+    <dimen name="dim_180">180dp</dimen>
+    <dimen name="dim_200">200dp</dimen>
+    <dimen name="dim_230">230dp</dimen>
+    <dimen name="dim_250">250dp</dimen>
+    <dimen name="dim_280">280dp</dimen>
+    <dimen name="dim_300">300dp</dimen>
+
+
+
+
+    <dimen name="text_8">8sp</dimen>
+    <dimen name="text_9">9sp</dimen>
+    <dimen name="text_10">10sp</dimen>
+    <dimen name="text_11">11sp</dimen>
+    <dimen name="text_12">12sp</dimen>
+    <dimen name="text_13">13sp</dimen>
+    <dimen name="text_14">14sp</dimen>
+    <dimen name="text_15">15sp</dimen>
+    <dimen name="text_16">16sp</dimen>
+    <dimen name="text_17">17sp</dimen>
+    <dimen name="text_18">18sp</dimen>
+    <dimen name="text_19">19sp</dimen>
+    <dimen name="text_20">20sp</dimen>
+    <dimen name="text_22">22sp</dimen>
+    <dimen name="text_24">24sp</dimen>
+    <dimen name="text_25">25sp</dimen>
+    <dimen name="text_26">26sp</dimen>
+    <dimen name="text_30">30sp</dimen>
+    <dimen name="text_35">35sp</dimen>
+    <dimen name="text_45">45sp</dimen>
+    <dimen name="textsize_26">26sp</dimen>
+    <dimen name="margin_220">220dp</dimen>
+    <dimen name="textsize_28">28sp</dimen>
+    <dimen name="margin_64">64dp</dimen>
+    <dimen name="margin_9">9dp</dimen>
+    <dimen name="textsize_36">36sp</dimen>
+    <dimen name="textsize_24">24sp</dimen>
+
+
+</resources>

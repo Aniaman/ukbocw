@@ -1,0 +1,292 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="custom_main">#44619c</color>
+    <color name="custom_main_dark">#304070</color>
+
+    <color name="custom_bg_grey">#F0F0F0</color>
+
+    <color name="custom_txt_whitegray">#D5D5D5</color>
+    <color name="custom_txt_midiumgray">#909090</color>
+    <color name="custom_txt_darkgray">#606060</color>
+
+    <color name="black_87">#de000000</color>
+    <color name="black_54">#8a000000</color>
+    <color name="black_20">#14000000</color>
+    <color name="black_30">#1d000000</color>
+
+    <color name="rx_required">#916C00</color>
+
+
+    <color name="light_black">#404040</color>
+    <color name="chart_border_lines">#ebebeb</color>
+    <!--  <color name="wizard_bg">#F2F2F2</color>  -->
+    <color name="wizard_bg">#EDF0F1</color>
+    <color name="wizard_edittext_boarder">#e8e8e8</color>
+    <color name="wizard_seperatore">#e7e7e7</color>
+    <!--     <color name="themeColor">#428BCA</color> -->
+    <color name="themeColor">#1682C2</color>
+    <color name="action_button_blue_pressed_family">#3648ae</color>
+    <color name="action_button_blue">#F0428BCA</color>
+    <color name="white">#ffffff</color>
+    <color name="card_background_first">#f5f5f5</color>
+    <color name="card_background_second">#ececec</color>
+
+    <color name="send_grey">#8C9197</color>
+    <color name="black">#000000</color>
+    <color name="teal">#009688</color>
+    <color name="gray_semi_transparent">#dbdbdb</color>
+    <color name="black_semi_transparent">#A3000000</color>
+    <color name="transparent_light_bg">#30000000</color>
+    <color name="secondary_text_color">#324467</color>
+    <color name="title_textcolor">#535353</color>
+    <color name="grey">#bababa</color>
+    <color name="cement_color">#cccccc</color>
+    <color name="grey_medication">#b2b2b2</color>
+    <color name="yellow">#ffb500</color>
+    <color name="star_yellow">#f1cc5b</color>
+    <color name="wizard_weel_floating">#edecec</color>
+
+    <color name="light_green">#43A047</color>
+    <color name="red">#F44336</color>
+    <color name="green">#4CAF50</color>
+
+    <color name="colorleaderBoard">#d3dbe6</color>
+    <color name="colorPrimaryDark">#FFF</color>
+    <color name="colorPrimary">#2168f3</color>
+    <color name="ic_grey_color">#B9BEC6</color>
+    <color name="graph_fill_color">#6FA2F7</color>
+
+    <color name="blue">#317af2</color>
+    <color name="insight">#324467</color>
+    <color name="bottom_background_color">#ffc4c2bc</color>
+    <color name="transparent">#00000000</color>
+    <color name="trans">#D74651</color>
+    <color name="order_med_divider">#e5e8f0</color>
+
+
+    <color name="card_main">#333333</color>
+    <color name="card_first">#555555</color>
+    <color name="card_second">#757575</color>
+    <color name="card_third">#ababab</color>
+    <color name="card_four">#9a9a9a</color>
+    <color name="card_five">#a2a2a2</color>
+    <color name="card_six">#333333</color>
+    <color name="card_background_color">#f9f9f9</color>
+    <color name="card_divider">#f5f7f9</color>
+    <color name="event_going">#3fcb7f</color>
+    <color name="event_not_going">#ff6969</color>
+    <color name="event_not_sure">#b2b2b2</color>
+    <color name="hra_pending_text">#bf3030</color>
+
+
+    <color name="follow_up_green">#5bd593</color>
+    <color name="discount_green">#3fcb7f</color>
+    <color name="dark_green">#0E9347</color>
+
+
+    <color name="color_primary_family_member">#3f51b5</color>
+
+
+    <color name="color_medical_history">#1E88E5</color>
+    <color name="color_medicine">#1976D2</color>
+
+
+    <color name="background_gray_lightest">#F3F3F9</color>
+    <color name="background_gray">#BDBDBD</color>
+    <color name="text_navy">#353556</color>
+    <color name="text_navy_transparent_50">#80353556</color>
+    <color name="chat_box_solid">#ECECEC</color>
+    <color name="chat_box_border">#bababa</color>
+    <color name="progress_first">#fb8b85</color>
+    <color name="progress_second">#ff9800</color>
+    <color name="progress_three">#7dd196</color>
+
+    <color name="opacity">#F4F7F7</color>
+    <color name="chat_box_enter_text_main_bg">#F8F8F8</color>
+    <color name="incoming_chat_bg">#f4f4f6</color>
+    <color name="outgoing_chat_bg">#E5EEFF</color>
+    <color name="ic_grey">#a7a7a7</color>
+    <color name="flo_card_chat_text">#E3F2FD</color>
+    <color name="divider_color">#e5e8f0</color>
+    <color name="hra_bg">#f8f9fa</color>
+
+
+    <!--new dashboard colors-->
+
+    <color name="hra_card_background">#8a90f3</color>
+    <color name="hra_button_text">#635fc5</color>
+    <color name="update_weight_card_background">#60d1c9</color>
+    <color name="update_weight_button_text">#289c94</color>
+    <color name="update_bp_card_background">#f0dede</color>
+    <color name="update_bp_button_text">#70411B</color>
+    <color name="order_medicines_card_background">#a7dbf4</color>
+    <color name="order_medicines_button_text">#005f7e</color>
+    <color name="health_check_card_background">#f5e8e1</color>
+    <color name="health_check_button_text">#70411b</color>
+    <color name="add_fm_card_background">#d8c4e2</color>
+    <color name="add_fm_button_text">#784d8e</color>
+    <color name="upload_medical_record_card_background">#ffe4e4</color>
+    <color name="upload_medical_record_button_text">#bf7a7a</color>
+    <color name="quiz_card_background">#fff9f4</color>
+    <color name="quiz_button_text">#956852</color>
+
+
+    <color name="hc_weight_card_background">#72b5e4</color>
+    <color name="hc_weight_button_text">#3375a3</color>
+    <color name="hc_bp_card_background">#5163ba</color>
+    <color name="hc_bp_button_text">#374793</color>
+    <color name="hc_diabetes_card_background">#51bab7</color>
+    <color name="hc_diabetes_button_text">#338885</color>
+    <color name="dashboard_upload_report">#FFE4e4</color>
+    <color name="dashboard_hc_weight">#72B5E4</color>
+    <color name="dashboard_hc_bp">#5163BA</color>
+    <color name="dashboard_hc_diabetes">#51BAB7</color>
+    <color name="dashboard_vision_color">#FFEFE7</color>
+
+    <!--new UI colors-->
+    <color name="main_title_color">#0D1A35</color>
+    <color name="background_grey">#F5F7F9</color>
+    <color name="divider_new_color">#e5e8f0</color>
+    <color name="sub_text_next_line">#8895AF</color>
+    <color name="secondary_title_color">#324467</color>
+    <color name="sub_text_secondary_color">#4D6189</color>
+    <color name="banner_header_color">#7c8cab</color>
+
+    <color name="gym_price_color">#354569</color>
+
+    <color name="grey_button_text_color">#a4b0cc</color>
+    <color name="order_selection_color">#f5f8ff</color>
+    <color name="bottom_view_background">#243352</color>
+    <color name="divider">#E5E8f0</color>
+    <color name="bg_color">#E5E5E5</color>
+
+    <color name="color_title_one">#0D1A35</color>
+    <color name="color_title_two">#243352</color>
+
+    <color name="color_heading_one">#324467</color>
+    <color name="color_gradient">#0038F5</color>
+    <color name="color_heading_two">#4D6189</color>
+    <color name="order_med_card_four">#4D6189</color>
+    <color name="sub_text_secondary_coclor">#4D6189</color>
+
+    <color name="color_text_one">#7C8CAB</color>
+    <color name="color_text_two">#8895AF</color>
+    <color name="color_text_three">#A4B0CC</color>
+    <color name="color_text_four">#C7CDE0</color>
+
+    <color name="color_bg_one">#e5e8f0</color>
+    <color name="color_bg_two">#f5f7f9</color>
+
+
+    <color name="blue_shadow_one">#03318C</color>
+
+
+    <color name="color_blue_title_one">#0D1A35</color>
+    <color name="color_blue_title_two">#0D1A35</color>
+
+    <color name="color_blue_heading_one">#0D1A35</color>
+    <color name="color_blue_heading_two">#0D1A35</color>
+
+    <color name="color_blue_text_one">#0D1A35</color>
+    <color name="color_blue_text_two">#0D1A35</color>
+    <color name="color_blue_text_three">#0D1A35</color>
+    <color name="color_blue_text_four">#0D1A35</color>
+
+    <color name="color_blue_bg_one">#0D1A35</color>
+    <color name="color_blue_bg_two">#0D1A35</color>
+    <color name="covid_one">#A1CCC1</color>
+    <color name="covid_two">#BAC3EB</color>
+    <color name="covid_three">#C9D8E3</color>
+    <color name="covid_four">#CEE8FF</color>
+    <color name="announcment_bg">#FFF8E4</color>
+    <color name="ic_info_yellow_bg">#fffcf3</color>
+    <color name="permission_desc">#ca9b59</color>
+
+    <color name="benefit_utilization_text_color">#BAD0FC</color>
+    <color name="status_initial_color_bg">#feeeee</color>
+    <color name="status_initial_color_view">#ffa6a8</color>
+    <color name="status_noservice_color_bg">#FFFCF3</color>
+    <color name="status_noservice_color_view">#FFEEC0</color>
+    <color name="reward_glod">#A86500</color>
+
+    <color name="background">#E5E5E5</color>
+
+
+    <color name="error_text_red">#D74651</color>
+    <color name="text_action_blue">#0951E1</color>
+    <color name="out_of_stock_divider">#FCA9A9</color>
+    <color name="out_of_stock_view_bg">#FEEEEE</color>
+
+    <color name="dark_orange">#FFC72D</color>
+    <color name="lite_orange">#FFFCF3</color>
+    <color name="dark_brown">#916C00</color>
+
+    <color name="bg_warning_yellow">#FEF6ED</color>
+    <color name="vaccination_green">#2AB268</color>
+    <color name="vaccination_yellow">#FFC72D</color>
+    <color name="vaccination_orange">#FF9800</color>
+    <color name="vaccination_gray">#F5F7F9</color>
+
+
+    <color name="appointment_booking_complete_green">#00A04F</color>
+    <color name="appointment_booking_inprogress_gray">#A4B0CC</color>
+
+    <color name="secondary_color_heading_one">#325567</color>
+
+
+    <color name="completed_text_color">#004A30</color>
+    <color name="cancelled_text_color">#C80010</color>
+
+    <color name="completed_bg_color">#DBFBE9</color>
+    <color name="in_progress_bg_color">#FEF4DA</color>
+
+    <color name="info_bg_color">#FEF6ED</color>
+    <color name="info_text_color">#46330A</color>
+    <color name="pharmacy_image_border">#E5E8F0</color>
+    <color name="total_saving_color">#765F00</color>
+    <color name="blue_a200">#5A8BED</color>
+
+    <color name="deep_orange_50">#FEF1F1</color>
+
+    <color name="blue_50">#F3F7FF</color>
+    <color name="pharma_color">#BFDEF3</color>
+    <color name="rx_bg_product_row">#FEFBED</color>
+
+    <color name="bg_family_member_icon_enabled">#EAF1FF</color>
+    <color name="bg_family_member_icon_disabled">#C4C4C4</color>
+
+    <color name="benefits_yellow">#E68902</color>
+    <color name="earn_points_view_bg_border">#FFE4BB</color>
+    <color name="benefit_help_lable_bg">#DCE0ED</color>
+    <color name="bg_update_vaccination_details">#FEFBED</color>
+    <color name="txt_update_vaccination_details">#9F5F01</color>
+    <color name="txt_update_vaccination_details_sub_text">#A06918</color>
+    <color name="bg_green">#008858</color>
+
+    <color name="lime_100">#F4E3C3</color>
+
+    <color name="file_upload_progress_blue">#E5EDFF</color>
+
+    <color name="chart_low_range_color">#FFB500</color>
+    <color name="chart_normal_range_color">#3FCB7F</color>
+    <color name="chart_high_range_color">#FF6969</color>
+    <color name="chart_unknown_range_color">#555555</color>
+
+    <color name="not_yet_vaccinated_red">#EA5757</color>
+    <color name="bg_family_member_icon_transluscent">#80C7CDE0</color>
+
+    <color name="close_button_text_red">#FF6C81</color>
+
+    <color name="mental_wellness_toolbar_heading_color">#0D1A35</color>
+    <color name="mental_wellness_toolbar_descriton">#4D6189</color>
+    <color name="mental_wellness_toolbar_background">#F9E8D6</color>
+    <color name="mental_wellness_detail_background">#F5F7F9</color>
+    <color name="mental_wellness_feedback_coucellor_name">#0D1A35</color>
+    <color name="mental_wellness_slot_no_slot_text_red">#C54B4F</color>
+
+    <color name="notification_color">#f5f7f9</color>
+    <color name="savings_color">#C87800</color>
+
+
+</resources>

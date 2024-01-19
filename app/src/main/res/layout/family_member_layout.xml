@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:fab="http://schemas.android.com/apk/res-auto"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <TextView
+        android:id="@+id/tv_family_question"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/dim_10"
+        android:layout_marginStart="@dimen/dim_10"
+        android:layout_marginTop="@dimen/margin_15"
+        android:fontFamily="@font/epilogue_bold_700"
+        android:text="How many members are here in your Family (Relation) ?"
+        android:textColor="@color/secondary_title_color"
+        android:textSize="@dimen/text_22"
+        android:lineHeight="@dimen/margin_30"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_family_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dim_16"
+        android:fontFamily="@font/epilogue_medium_500"
+        android:text="Member Name"
+        android:textColor="@color/secondary_title_color"
+        android:textSize="@dimen/text_16"
+        android:layout_marginTop="@dimen/margin_25"
+        app:layout_constraintTop_toBottomOf="@id/tv_family_question"
+        app:layout_constraintStart_toStartOf="@id/tv_family_question"
+        app:layout_constraintEnd_toEndOf="@id/tv_family_question" />
+
+    <EditText
+        android:id="@+id/et_full_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/text_16"
+        android:layout_marginTop="@dimen/text_10"
+        android:layout_marginEnd="@dimen/dim_16"
+        android:background="@drawable/input_field_background"
+        android:fontFamily="@font/epilogue_regular_400"
+        android:hint="Member Name"
+        android:padding="@dimen/margin_12"
+        android:textColorHint="@color/color_text_four"
+        app:layout_constraintTop_toBottomOf="@id/tv_family_name"
+        app:layout_constraintStart_toStartOf="@id/tv_family_name"
+        app:layout_constraintEnd_toEndOf="@id/tv_family_name" />
+
+    <TextView
+        android:id="@+id/tv_family_occupation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dim_16"
+        android:fontFamily="@font/epilogue_medium_500"
+        android:text="Member Occupation"
+        android:textColor="@color/secondary_title_color"
+        android:textSize="@dimen/text_16"
+        android:layout_marginVertical="@dimen/margin_15"
+        android:layout_marginTop="@dimen/margin_15"
+        app:layout_constraintTop_toBottomOf="@id/et_full_name" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/til_occupation"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense.ExposedDropdownMenu"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/dim_16"
+        android:layout_marginVertical="@dimen/dim_5"
+        android:background="@color/background_grey"
+        fab:boxBackgroundColor="@color/white"
+        fab:boxBackgroundMode="outline"
+        fab:boxStrokeColor="@color/grey_button_text_color"
+        fab:endIconTint="@color/black"
+        fab:hintTextColor="@color/black"
+        fab:layout_constraintTop_toBottomOf="@id/tv_family_occupation"
+        fab:layout_constraintStart_toStartOf="@id/tv_family_occupation"
+        fab:layout_constraintEnd_toEndOf="@id/tv_family_occupation">
+
+        <AutoCompleteTextView
+            android:id="@+id/dropdown_occupation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Select Occupation"
+            android:inputType="none"
+            android:textColor="@color/main_title_color"
+            android:textColorHint="@color/background_gray"
+            fab:layout_constraintTop_toBottomOf="@id/tv_family_occupation"
+            fab:layout_constraintStart_toStartOf="@id/tv_family_occupation"
+            fab:layout_constraintEnd_toEndOf="@id/tv_family_occupation" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <EditText
+        android:id="@+id/et_other_occupation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/text_16"
+        android:layout_marginTop="@dimen/text_10"
+        android:layout_marginEnd="@dimen/dim_16"
+        android:background="@drawable/input_field_background"
+        android:fontFamily="@font/epilogue_regular_400"
+        android:hint="Other Occupation"
+        android:padding="@dimen/margin_12"
+        android:visibility="gone"
+        android:textColorHint="@color/color_text_four"
+        app:layout_constraintTop_toBottomOf="@id/til_occupation"
+        app:layout_constraintStart_toStartOf="@id/til_occupation"
+        app:layout_constraintEnd_toEndOf="@id/til_occupation" />
+
+    <TextView
+        android:id="@+id/tv_family_education"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dim_16"
+        android:fontFamily="@font/epilogue_medium_500"
+        android:text="Member Qualification"
+        android:textColor="@color/secondary_title_color"
+        android:textSize="@dimen/text_20"
+        android:layout_marginVertical="@dimen/margin_15"
+        android:layout_marginTop="@dimen/margin_15"
+        app:layout_constraintTop_toBottomOf="@id/et_other_occupation" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/til_education"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense.ExposedDropdownMenu"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/dim_16"
+        android:layout_marginVertical="@dimen/dim_5"
+        android:background="@color/background_grey"
+        fab:boxBackgroundColor="@color/white"
+        fab:boxBackgroundMode="outline"
+        fab:boxStrokeColor="@color/grey_button_text_color"
+        fab:endIconTint="@color/black"
+        fab:hintTextColor="@color/black"
+        fab:layout_constraintTop_toBottomOf="@id/tv_family_education"
+        fab:layout_constraintStart_toStartOf="@id/tv_family_education"
+        fab:layout_constraintEnd_toEndOf="@id/tv_family_education">
+
+        <AutoCompleteTextView
+            android:id="@+id/dropdown_education"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Select Qualification"
+            android:inputType="none"
+            android:textColor="@color/main_title_color"
+            android:textColorHint="@color/background_gray"
+            fab:layout_constraintTop_toBottomOf="@id/tv_family_education"
+            fab:layout_constraintStart_toStartOf="@id/tv_family_education"
+            fab:layout_constraintEnd_toEndOf="@id/tv_family_education" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <TextView
+        android:id="@+id/tv_add_member"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="36dp"
+        android:background="@drawable/button_bg_small"
+        android:enabled="true"
+        android:fontFamily="@font/epilogue_semibold_600"
+        android:gravity="center"
+        android:paddingStart="@dimen/dim_20"
+        android:paddingTop="@dimen/margin_10"
+        android:paddingEnd="@dimen/dim_20"
+        android:paddingBottom="@dimen/margin_10"
+        android:text="Add More"
+        android:textColor="@color/white"
+        android:textSize="@dimen/text_20"
+        app:layout_constraintHorizontal_bias="0.439"
+        app:layout_constraintStart_toStartOf="@id/til_education"
+        app:layout_constraintTop_toBottomOf="@id/til_education"
+        app:layout_goneMarginBottom="@dimen/dim_9" />
+
+    <TextView
+        android:id="@+id/tv_save"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/button_bg_small"
+        android:enabled="true"
+        android:fontFamily="@font/epilogue_semibold_600"
+        android:gravity="center"
+        android:paddingStart="@dimen/dim_20"
+        android:paddingTop="@dimen/margin_10"
+        android:paddingEnd="@dimen/dim_20"
+        android:paddingBottom="@dimen/margin_10"
+        android:text="Save"
+        android:textColor="@color/white"
+        android:textSize="@dimen/text_20"
+        app:layout_constraintStart_toEndOf="@id/tv_add_member"
+        app:layout_constraintTop_toTopOf="@id/tv_add_member"
+        fab:layout_constraintBottom_toBottomOf="@+id/tv_add_member"
+        fab:layout_constraintEnd_toEndOf="@+id/til_education"
+        app:layout_goneMarginBottom="@dimen/dim_9" />
+</androidx.constraintlayout.widget.ConstraintLayout>

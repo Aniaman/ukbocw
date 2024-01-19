@@ -1,0 +1,298 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:fab="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dim_16"
+                android:layout_marginTop="@dimen/dim_20"
+                android:lineHeight="@dimen/margin_25"
+                android:fontFamily="@font/epilogue_medium_500"
+                android:text="Are you aware about the Maternity Benefit scheme of UKBOCWWB?"
+                android:textColor="@color/secondary_title_color"
+                android:textSize="@dimen/text_16" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense.ExposedDropdownMenu"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dim_16"
+                android:layout_marginEnd="@dimen/dim_16"
+                android:layout_marginTop="@dimen/margin_5"
+                fab:boxBackgroundColor="@color/white"
+                fab:boxBackgroundMode="outline"
+                fab:boxStrokeColor="@color/grey_button_text_color"
+                fab:endIconTint="@color/black"
+                fab:hintTextColor="@color/black">
+
+                <AutoCompleteTextView
+                    android:id="@+id/dropdown_maternity_scheme_aware"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Select Once"
+                    android:inputType="none"
+                    android:textColor="@color/main_title_color"
+                    android:textColorHint="@color/color_text_four" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dim_16"
+                android:layout_marginTop="@dimen/dim_20"
+                android:lineHeight="@dimen/margin_25"
+                android:fontFamily="@font/epilogue_medium_500"
+                android:text="Have you availed the benefits under the Maternity Benefit scheme?"
+                android:textColor="@color/secondary_title_color"
+                android:textSize="@dimen/text_16" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense.ExposedDropdownMenu"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dim_16"
+                android:layout_marginEnd="@dimen/dim_16"
+                android:layout_marginTop="@dimen/margin_5"
+                fab:boxBackgroundColor="@color/white"
+                fab:boxBackgroundMode="outline"
+                fab:boxStrokeColor="@color/grey_button_text_color"
+                fab:endIconTint="@color/black"
+                fab:hintTextColor="@color/black">
+
+                <AutoCompleteTextView
+                    android:id="@+id/dropdown_maternity_scheme_avail"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Select Once"
+                    android:inputType="none"
+                    android:textColor="@color/main_title_color"
+                    android:textColorHint="@color/color_text_four" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <TextView
+                android:id="@+id/tv_avail_why"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dim_16"
+                android:layout_marginTop="@dimen/dim_20"
+                android:lineHeight="@dimen/margin_25"
+                android:visibility="gone"
+                android:fontFamily="@font/epilogue_medium_500"
+                android:text="If No, why?"
+                android:textColor="@color/secondary_title_color"
+                android:textSize="@dimen/text_16" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/til_avail_reason_why"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense.ExposedDropdownMenu"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dim_16"
+                android:layout_marginEnd="@dimen/dim_16"
+                android:layout_marginTop="@dimen/margin_5"
+                fab:boxBackgroundColor="@color/white"
+                fab:boxBackgroundMode="outline"
+                android:visibility="gone"
+                fab:boxStrokeColor="@color/grey_button_text_color"
+                fab:endIconTint="@color/black"
+                fab:hintTextColor="@color/black">
+
+                <AutoCompleteTextView
+                    android:id="@+id/dropdown_maternity_scheme_avail_reason"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Select Once"
+                    android:inputType="none"
+                    android:textColor="@color/main_title_color"
+                    android:textColorHint="@color/color_text_four" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <TextView
+                android:id="@+id/other_reason"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dim_16"
+                android:layout_marginTop="@dimen/dim_20"
+                android:lineHeight="@dimen/margin_25"
+                android:visibility="gone"
+                android:fontFamily="@font/epilogue_medium_500"
+                android:text="Other Reason"
+                android:textColor="@color/secondary_title_color"
+                android:textSize="@dimen/text_16" />
+
+            <EditText
+                android:id="@+id/et_other_reason"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/text_16"
+                android:layout_marginTop="@dimen/text_10"
+                android:layout_marginEnd="@dimen/dim_16"
+                android:visibility="gone"
+                android:background="@drawable/input_field_background"
+                android:fontFamily="@font/epilogue_regular_400"
+                android:hint="Karan Singh"
+                android:padding="@dimen/margin_12"
+                android:textColorHint="@color/color_text_four" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dim_16"
+                android:layout_marginTop="@dimen/dim_20"
+                android:lineHeight="@dimen/margin_25"
+                android:fontFamily="@font/epilogue_medium_500"
+                android:text="How is the fund utilized?"
+                android:textColor="@color/secondary_title_color"
+                android:textSize="@dimen/text_16" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense.ExposedDropdownMenu"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dim_16"
+                android:layout_marginEnd="@dimen/dim_16"
+                android:layout_marginTop="@dimen/margin_5"
+                fab:boxBackgroundColor="@color/white"
+                fab:boxBackgroundMode="outline"
+                fab:boxStrokeColor="@color/grey_button_text_color"
+                fab:endIconTint="@color/black"
+                fab:hintTextColor="@color/black">
+
+                <AutoCompleteTextView
+                    android:id="@+id/fund_utilized"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Select Once"
+                    android:textColor="@color/main_title_color"
+                    android:textColorHint="@color/color_text_four" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <TextView
+                android:id="@+id/other_fund_utilized"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dim_16"
+                android:layout_marginTop="@dimen/dim_20"
+                android:lineHeight="@dimen/margin_25"
+                android:visibility="gone"
+                android:fontFamily="@font/epilogue_medium_500"
+                android:text="Other Reason"
+                android:textColor="@color/secondary_title_color"
+                android:textSize="@dimen/text_16" />
+
+            <EditText
+                android:id="@+id/et_other_fund_utilized"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/text_16"
+                android:layout_marginTop="@dimen/text_10"
+                android:layout_marginEnd="@dimen/dim_16"
+                android:visibility="gone"
+                android:background="@drawable/input_field_background"
+                android:fontFamily="@font/epilogue_regular_400"
+                android:hint="Karan Singh"
+                android:padding="@dimen/margin_12"
+                android:textColorHint="@color/color_text_four" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dim_16"
+                android:layout_marginTop="@dimen/dim_20"
+                android:lineHeight="@dimen/margin_25"
+                android:fontFamily="@font/epilogue_medium_500"
+                android:text="Was the financial assistance helpful to meet the needs?"
+                android:textColor="@color/secondary_title_color"
+                android:textSize="@dimen/text_16" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense.ExposedDropdownMenu"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dim_16"
+                android:layout_marginEnd="@dimen/dim_16"
+                android:layout_marginTop="@dimen/margin_5"
+                fab:boxBackgroundColor="@color/white"
+                fab:boxBackgroundMode="outline"
+                fab:boxStrokeColor="@color/grey_button_text_color"
+                fab:endIconTint="@color/black"
+                fab:hintTextColor="@color/black">
+
+                <AutoCompleteTextView
+                    android:id="@+id/dropdown_financial_assistance"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Select Once"
+                    android:inputType="none"
+                    android:textColor="@color/main_title_color"
+                    android:textColorHint="@color/color_text_four" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <TextView
+                android:id="@+id/tv_scheme_impact"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dim_16"
+                android:layout_marginTop="@dimen/dim_20"
+                android:lineHeight="@dimen/margin_25"
+                android:fontFamily="@font/epilogue_medium_500"
+                android:text="What are the impacts of this scheme?"
+                android:textColor="@color/secondary_title_color"
+                android:textSize="@dimen/text_16" />
+
+            <EditText
+                android:id="@+id/et_scheme_impact"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/text_16"
+                android:layout_marginTop="@dimen/text_10"
+                android:layout_marginEnd="@dimen/dim_16"
+                android:background="@drawable/input_field_background"
+                android:fontFamily="@font/epilogue_regular_400"
+                android:hint="Scheme Impact"
+                android:padding="@dimen/margin_12"
+                android:textColorHint="@color/color_text_four" />
+
+            <TextView
+                android:id="@+id/tv_maternity_challenge_faced"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dim_16"
+                android:layout_marginTop="@dimen/dim_20"
+                android:lineHeight="@dimen/margin_25"
+                android:fontFamily="@font/epilogue_medium_500"
+                android:text="What are the challenges you faced to avail the scheme and your opinion, views, and suggestions about the scheme?"
+                android:textColor="@color/secondary_title_color"
+                android:textSize="@dimen/text_16" />
+
+            <EditText
+                android:id="@+id/et_maternity_challenge_faced"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/text_16"
+                android:layout_marginTop="@dimen/text_10"
+                android:layout_marginEnd="@dimen/dim_16"
+                android:background="@drawable/input_field_background"
+                android:fontFamily="@font/epilogue_regular_400"
+                android:hint="Challenges faced to avail the scheme"
+                android:padding="@dimen/margin_12"
+                android:textColorHint="@color/color_text_four" />
+        </LinearLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,188 @@
+<resources>
+    <string name="app_name">UKBOCW</string>
+    <string-array name="gender">
+        <item>Male</item>
+        <item>Female</item>
+        <item>Other</item>
+    </string-array>
+    <string-array name="age">
+        <item>18-25</item>
+        <item>26-35</item>
+        <item>36-45</item>
+        <item>46-60</item>
+        <item>Above 60</item>
+    </string-array>
+    <string-array name="area">
+        <item>Rural</item>
+        <item>Urban</item>
+    </string-array>
+    <string-array name="maritalStatus">
+        <item>Married</item>
+        <item>Unmarried</item>
+        <item>Widow</item>
+        <item>Divorced</item>
+    </string-array>
+    <string-array name="education">
+        <item>Illiterate</item>
+        <item>Primary</item>
+        <item>Middle</item>
+        <item>Matric</item>
+        <item>Intermediate</item>
+        <item>Graduation</item>
+        <item>Above</item>
+    </string-array>
+    <string-array name="designation">
+        <item>ChinaaiMistri</item>
+        <item>Majdoor (Helper)</item>
+        <item>Plumber</item>
+        <item>Carpenter</item>
+        <item>Painter</item>
+        <item>Other</item>
+    </string-array>
+    <string-array name="socialCategory">
+        <item>Scheduled Caste</item>
+        <item>Other Backward Classes</item>
+        <item>Scheduled Tribe</item>
+        <item>General</item>
+        <item>Backward Class</item>
+    </string-array>
+    <string-array name="religion">
+        <item>Hindu</item>
+        <item>Muslim</item>
+        <item>Christian</item>
+        <item>Sikh</item>
+        <item>Other</item>
+    </string-array>
+    <string-array name="state">
+        <item>Uttrakhand</item>
+        <item>UttarPradesh</item>
+        <item>Bihar</item>
+        <item>Bengal</item>
+        <item>Jharkhand</item>
+        <item>Other</item>
+    </string-array>
+    <string-array name="memberOccupation">
+        <item>Construction</item>
+        <item>Other</item>
+    </string-array>
+    <string-array name="memberEducation">
+        <item>Illiterate</item>
+        <item>Primary</item>
+        <item>Middle</item>
+        <item>Matric</item>
+        <item>Intermediate</item>
+        <item>Graduation</item>
+        <item>Above</item>
+        <item>Underage</item>
+    </string-array>
+    <string-array name="rationCard">
+        <item>Yellow (BPL)</item>
+        <item>Green(APL)</item>
+        <item>Pink (AAY)</item>
+        <item>Khaki (OPH)</item>
+        <item>None</item>
+    </string-array>
+    <string-array name="sourceOfIncome">
+        <item>Salary</item>
+        <item>Agriculture/ Cattle rearing</item>
+        <item>Daily Wage</item>
+        <item>Pension</item>
+        <item>Other</item>
+    </string-array>
+    <string-array name="familyIncome">
+        <item>Less than 5000</item>
+        <item>5000–10000</item>
+        <item>5000–10000</item>
+        <item>11000–15000</item>
+        <item>16000 and above</item>
+    </string-array>
+    <string-array name="medical">
+        <item>Private Hospital</item>
+        <item>Government Hospital</item>
+        <item>Both</item>
+    </string-array>
+    <string-array name="YesNo">
+        <item>Yes</item>
+        <item>No</item>
+    </string-array>
+    <string-array name="home">
+        <item>Own House</item>
+        <item>Provided by Employer</item>
+        <item>On Rent</item>
+        <item>Others</item>
+    </string-array>
+    <string-array name="houseType">
+        <item>Kachcha</item>
+        <item>Pacca</item>
+        <item>Semi-Pacca</item>
+    </string-array>
+    <string-array name="years">
+        <item>One year</item>
+        <item>Two years</item>
+        <item>Three years</item>
+        <item>More than three years</item>
+    </string-array>
+    <string-array name="faceProblemCertificate">
+        <item>Yes</item>
+        <item>No</item>
+        <item>Not Aware</item>
+    </string-array>
+    <string-array name="faceProblemWorking">
+        <item>Yes</item>
+        <item>No</item>
+        <item>Not Opinion</item>
+    </string-array>
+    <string-array name="fillForm">
+        <item>Myself</item>
+        <item>CSC</item>
+        <item>Contractor\ Employer</item>
+        <item>Other</item>
+    </string-array>
+    <string-array name="renewMembershipNo">
+        <item>Not Aware</item>
+        <item>Lack of Documents</item>
+        <item>Lack of Cooperation from CSC</item>
+        <item>Other</item>
+    </string-array>
+    <string-array name="YesNoSchemes">
+        <item>Yes</item>
+        <item>No</item>
+        <item>Some of them</item>
+    </string-array>
+    <string-array name="schemesKnow">
+        <item>Media</item>
+        <item>Friends</item>
+        <item>Co-Workers </item>
+        <item>Union</item>
+        <item>Others</item>
+    </string-array>
+
+    <string-array name="YesNoAvail">
+        <item>Yes</item>
+        <item>No</item>
+        <item>Not Eligible</item>
+    </string-array>
+    <string-array name="whyNotAvail">
+        <item>Incomplete application</item>
+        <item>Applied but not availed</item>
+        <item>Insufficient Documents</item>
+        <item>No minimum 1-year regular Membership</item>
+        <item>Already availed Maternity benefit</item>
+        <item>Lack of Information (criteria)</item>
+        <item>Non-cooperation from officers</item>
+        <item>Others</item>
+    </string-array>
+    <string-array name="fundUtilized">
+        <item>Food and Nutrition</item>
+        <item>Medicine</item>
+        <item>Facilities</item>
+        <item>Others</item>
+    </string-array>
+    <string-array name="financialAssistance">
+        <item>Sufficient</item>
+        <item>Not Sufficient</item>
+        <item>Partially</item>
+    </string-array>
+
+
+</resources>

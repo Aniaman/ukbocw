@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="@dimen/text_10"
+    android:ellipsize="end"
+    android:maxLines="1"
+    android:background="@color/background_grey"
+    android:textColor="@color/main_title_color"
+    android:fontFamily="@font/epilogue_medium_500">
+
+</TextView>

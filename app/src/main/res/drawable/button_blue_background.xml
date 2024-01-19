@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <!-- drawable/button.xml -->
+<vector
+xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:aapt="http://schemas.android.com/aapt"
+android:width="343dp"
+android:height="50dp"
+android:viewportWidth="343"
+android:viewportHeight="56"
+    >
+<group>
+    <clip-path
+        android:pathData="M8 0H335C339.418 0 343 3.58172 343 8V48C343 52.4183 339.418 56 335 56H8C3.58172 56 0 52.4183 0 48V8C0 3.58172 3.58172 0 8 0Z"
+        />
+    <group
+        android:translateX="0.5"
+        android:translateY="-1.1"
+        android:pivotX="171.5"
+        android:pivotY="28"
+        android:scaleX="2.828"
+        android:scaleY="4.834"
+        android:rotation="5"
+        >
+        <path
+            android:pathData="M0 0V56H343V0"
+            >
+            <aapt:attr name="android:fillColor">
+                <gradient
+                    android:type="linear"
+                    android:startX="85.75"
+                    android:startY="28"
+                    android:endX="257.25"
+                    android:endY="28"
+                    >
+                    <item
+                        android:color="#0038F5"
+                        android:offset="0"
+                        />
+                    <item
+                        android:color="#9F03FF"
+                        android:offset="1"
+                        />
+                </gradient>
+            </aapt:attr>
+        </path>
+    </group>
+</group>
+</vector>

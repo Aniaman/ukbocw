@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/tv_ptms"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/epilogue_extra_bold_800"
+        android:includeFontPadding="false"
+        android:text="UKBOCW"
+        android:textAllCaps="true"
+        android:layout_marginTop="@dimen/margin_100"
+        android:textColor="@color/color_heading_one"
+        android:textSize="@dimen/textsize_20"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+    <TextView
+        android:id="@+id/tv_login"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/epilogue_bold_700"
+        android:includeFontPadding="false"
+        android:text="Login"
+        android:textAllCaps="true"
+        android:layout_marginTop="@dimen/margin_60"
+        android:textColor="@color/secondary_title_color"
+        android:textSize="@dimen/textsize_30"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_ptms"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <TextView
+        android:id="@+id/tv_username"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Email Id"
+        android:textColor="@color/secondary_title_color"
+        android:fontFamily="@font/epilogue_medium_500"
+        android:textSize="@dimen/text_20"
+        android:layout_marginTop="@dimen/margin_50"
+        android:layout_marginStart="@dimen/margin_20"
+        android:letterSpacing="0.1"
+        app:layout_constraintTop_toBottomOf="@id/tv_login"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <EditText
+        android:id="@+id/et_username"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/input_field_background"
+        android:hint="Enter Your Email Id"
+        android:textColor="@color/card_main"
+        android:textColorHint="@color/grey_button_text_color"
+        android:padding="@dimen/text_8"
+        android:inputType="text"
+        android:layout_marginStart="@dimen/margin_20"
+        android:layout_marginEnd="@dimen/margin_30"
+        android:layout_marginTop="@dimen/margin_10"
+        app:layout_constraintStart_toStartOf="@id/tv_username"
+        app:layout_constraintTop_toBottomOf="@id/tv_username"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <TextView
+        android:id="@+id/username_validation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Invalid username"
+        android:fontFamily="@font/epilogue_medium_500"
+        android:textColor="@color/red"
+        android:visibility="gone"
+        android:textSize="@dimen/textsize_14"
+        android:layout_marginTop="@dimen/margin_10"
+        android:layout_marginStart="@dimen/margin_20"
+        android:layout_marginEnd="@dimen/margin_20"
+        app:layout_constraintStart_toStartOf="@id/et_username"
+        app:layout_constraintTop_toBottomOf="@id/et_username"
+        app:layout_constraintEnd_toEndOf="@id/et_username"
+        />
+
+    <TextView
+        android:id="@+id/tv_password"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:fontFamily="@font/epilogue_medium_500"
+        android:letterSpacing="0.1"
+        android:text="Password"
+        android:textColor="@color/secondary_title_color"
+        android:textSize="@dimen/text_20"
+        app:layout_constraintStart_toStartOf="@id/tv_username"
+        app:layout_constraintTop_toBottomOf="@id/username_validation" />
+
+    <EditText
+        android:id="@+id/et_password"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/input_field_background"
+        android:hint="Enter Password"
+        android:textColor="@color/card_main"
+        android:textColorHint="@color/grey_button_text_color"
+        android:padding="@dimen/text_8"
+        android:layout_marginStart="@dimen/margin_20"
+        android:layout_marginEnd="@dimen/margin_30"
+        android:layout_marginTop="@dimen/margin_10"
+        android:inputType="textPassword"
+        app:layout_constraintStart_toStartOf="@id/et_username"
+        app:layout_constraintTop_toBottomOf="@id/tv_password"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <TextView
+        android:id="@+id/password_validation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Password length must be 8 and at least 1 special symbol,1 lowercase and 1 uppercase"
+        android:fontFamily="@font/epilogue_medium_500"
+        android:textColor="@color/red"
+        android:padding="@dimen/margin_5"
+        android:visibility="gone"
+        android:lineHeight="@dimen/text_25"
+        android:textSize="@dimen/textsize_14"
+        android:layout_marginTop="@dimen/margin_10"
+        android:layout_marginStart="@dimen/margin_20"
+        android:layout_marginEnd="@dimen/margin_20"
+        app:layout_constraintTop_toBottomOf="@id/et_password"
+        app:layout_constraintStart_toStartOf="@id/et_password"
+        app:layout_constraintEnd_toEndOf="@id/et_password" />
+
+    <TextView
+
+        android:id="@+id/tv_sign_in"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="36dp"
+        android:background="@drawable/button_blue_background"
+        android:enabled="true"
+        android:fontFamily="@font/epilogue_semibold_600"
+        android:gravity="center"
+        android:paddingStart="@dimen/dim_20"
+        android:paddingTop="@dimen/margin_10"
+        android:paddingEnd="@dimen/dim_20"
+        android:paddingBottom="@dimen/margin_10"
+        android:text="Sign in"
+        android:textAllCaps="true"
+        android:textColor="@color/white"
+        android:textSize="@dimen/text_20"
+        app:layout_constraintEnd_toEndOf="@id/password_validation"
+        app:layout_constraintHorizontal_bias="0.439"
+        app:layout_constraintStart_toStartOf="@id/password_validation"
+        app:layout_constraintTop_toBottomOf="@id/password_validation"
+        app:layout_goneMarginBottom="@dimen/dim_9" />
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

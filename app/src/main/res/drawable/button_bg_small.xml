@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- drawable/state_focus.xml -->
+<vector
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:aapt="http://schemas.android.com/aapt"
+    android:width="122dp"
+    android:height="46dp"
+    android:viewportWidth="122"
+    android:viewportHeight="46"
+    >
+    <group>
+        <clip-path
+            android:pathData="M11 3H111C115.418 3 119 6.58172 119 11V35C119 39.4183 115.418 43 111 43H11C6.58172 43 3 39.4183 3 35V11C3 6.58172 6.58172 3 11 3Z"
+            />
+        <group
+            android:translateX="0.5"
+            android:translateY="-1.1"
+            android:pivotX="61"
+            android:pivotY="23"
+            android:scaleX="2.828"
+            android:scaleY="4.834"
+            android:rotation="45"
+            >
+            <path
+                android:pathData="M3 3V43H119V3"
+                >
+                <aapt:attr name="android:fillColor">
+                    <gradient
+                        android:type="linear"
+                        android:startX="32"
+                        android:startY="23"
+                        android:endX="90"
+                        android:endY="23"
+                        >
+                        <item
+                            android:color="#0038F5"
+                            android:offset="0"
+                            />
+                        <item
+                            android:color="#9F03FF"
+                            android:offset="1"
+                            />
+                    </gradient>
+                </aapt:attr>
+            </path>
+        </group>
+    </group>
+
+</vector>
