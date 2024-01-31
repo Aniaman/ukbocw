@@ -4,6 +4,7 @@
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
+
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
@@ -24,21 +25,23 @@
             android:paddingStart="@dimen/dim_4"
             android:src="@drawable/ic_back_arrow"
             tools:ignore="ContentDescription" />
+
         <TextView
             android:id="@+id/tv_toolbar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="@color/bottom_view_background"
-            android:fontFamily="@font/epilogue_bold_700"
-            android:textSize="@dimen/text_20"
-            />
+            android:fontFamily="@font/epilogue_semibold_600"
+            android:textSize="@dimen/text_16"
+            android:text="Personal Details and Family Backgrounds" />
 
 
     </androidx.appcompat.widget.Toolbar>
+
     <View
         android:layout_width="match_parent"
         android:layout_height="@dimen/dim_2"
         android:background="@drawable/pharma_gray_bg"
-        app:layout_constraintTop_toBottomOf="@id/toolbar"/>
+        app:layout_constraintTop_toBottomOf="@id/toolbar" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -3,7 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white">
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/background_gray_lightest">
 
     <include
         android:id="@+id/toolbar_layout"
@@ -12,127 +13,154 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/basic_detail_layout"
+    <include
+        android:id="@+id/l_family_member_layout"
+        layout="@layout/family_member_layout"
         android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:visibility="visible"
-        android:layout_marginBottom="@dimen/margin_15"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/toolbar_layout"
-        app:layout_constraintBottom_toBottomOf="@id/button">
-
-        <include
-            android:id="@+id/basic_detail"
-            layout="@layout/personal_details"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:layout_constraintBottom_toBottomOf="@id/basic_detail_layout"
-            app:layout_constraintEnd_toEndOf="@id/basic_detail_layout"
-            app:layout_constraintStart_toStartOf="@id/basic_detail_layout" />
-    </androidx.constraintlayout.widget.ConstraintLayout>
-
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/family_member_layout"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
+        android:layout_height="wrap_content"
         android:visibility="gone"
-        android:layout_marginBottom="@dimen/margin_15"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/toolbar_layout" />
+    <TextView
+        android:id="@+id/questions"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:text="What are the challenges you faced to avail the scheme and your opinion, views, and suggestions about the scheme?"
+        android:textSize="@dimen/dim_20"
+        android:lineHeight="@dimen/text_30"
+        android:paddingStart="@dimen/dim_20"
+        android:paddingEnd="@dimen/dim_20"
+        android:paddingTop="@dimen/margin_15"
+        android:paddingBottom="@dimen/margin_15"
+        android:textColor="@color/secondary_text_color"
+        android:fontFamily="@font/epilogue_medium_500"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/toolbar_layout"
-        app:layout_constraintBottom_toBottomOf="@id/button">
+        app:layout_constraintEnd_toEndOf="parent" />
 
-        <include
-            android:id="@+id/family_member"
-            layout="@layout/family_member_layout"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:layout_constraintTop_toTopOf="@id/family_member_layout"
-            app:layout_constraintEnd_toEndOf="@id/family_member_layout"
-            app:layout_constraintStart_toStartOf="@id/family_member_layout" />
-    </androidx.constraintlayout.widget.ConstraintLayout>
+    <EditText
+        android:id="@+id/et_answer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/input_field_background"
+        android:layout_margin="@dimen/margin_20"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/questions"
+        android:textColor="@color/secondary_title_color"
+        android:paddingHorizontal="@dimen/margin_15"
+        android:textSize="@dimen/dim_16"
+        tools:text="Animesh Srivastava"
+        app:layout_constraintEnd_toEndOf="parent" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/economic_status_layout"
+        android:id="@+id/cl_body"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:visibility="gone"
-        android:layout_marginBottom="@dimen/margin_15"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="@dimen/margin_10"
+        app:layout_constraintTop_toBottomOf="@id/et_answer"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/toolbar_layout"
-        app:layout_constraintBottom_toBottomOf="@id/button">
+        app:layout_constraintBottom_toTopOf="@id/button"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginBottom="@dimen/margin_10">
 
-        <include
-            android:id="@+id/economic_status"
-            layout="@layout/economic_status"
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_questions"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:layout_constraintTop_toTopOf="@id/economic_status_layout"
-            app:layout_constraintEnd_toEndOf="@id/economic_status_layout"
-            app:layout_constraintStart_toStartOf="@id/economic_status_layout" />
-    </androidx.constraintlayout.widget.ConstraintLayout>
+            android:layout_margin="@dimen/dim_20"
+            app:layout_constraintTop_toTopOf="@id/cl_body"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:orientation="vertical" />
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/registration_question_layout"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:visibility="gone"
-        android:layout_marginBottom="@dimen/margin_15"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/toolbar_layout"
-        app:layout_constraintBottom_toTopOf="@id/button">
-
-        <include
-            android:id="@+id/registration_question"
-            layout="@layout/registration_question"
+        <TextView
+            android:id="@+id/tv_other_answer"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:layout_constraintTop_toTopOf="@id/registration_question_layout"
-            app:layout_constraintEnd_toEndOf="@id/registration_question_layout"
-            app:layout_constraintStart_toStartOf="@id/registration_question_layout" />
-    </androidx.constraintlayout.widget.ConstraintLayout>
+            android:text="If you select Other "
+            android:textSize="@dimen/dim_20"
+            android:lineHeight="@dimen/text_30"
+            android:paddingStart="@dimen/dim_20"
+            android:paddingEnd="@dimen/dim_20"
+            android:paddingTop="@dimen/margin_15"
+            android:paddingBottom="@dimen/margin_15"
+            android:visibility="gone"
+            android:textColor="@color/secondary_text_color"
+            android:fontFamily="@font/epilogue_medium_500"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/rv_questions"
+            app:layout_constraintEnd_toEndOf="parent" />
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/maternity_scheme_layout"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:visibility="gone"
-        android:layout_marginBottom="@dimen/margin_15"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/toolbar_layout"
-        app:layout_constraintBottom_toTopOf="@id/button">
-
-        <include
-            android:id="@+id/maternity_scheme"
-            layout="@layout/maternity_benefit_scheme"
+        <EditText
+            android:id="@+id/et_other_answer"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:layout_constraintTop_toTopOf="@id/maternity_scheme_layout"
-            app:layout_constraintEnd_toEndOf="@id/maternity_scheme_layout"
-            app:layout_constraintStart_toStartOf="@id/maternity_scheme_layout" />
+            android:background="@drawable/input_field_background"
+            android:layout_margin="@dimen/margin_15"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_other_answer"
+            android:textColor="@color/secondary_title_color"
+            android:paddingHorizontal="@dimen/margin_15"
+            android:textSize="@dimen/dim_16"
+            tools:text="Animesh Srivastava"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <androidx.core.widget.NestedScrollView
+            android:id="@+id/sv_other_answer"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/et_other_answer">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_other_answer"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="@dimen/dim_20"
+                android:orientation="vertical"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/sv_other_answer" />
+        </androidx.core.widget.NestedScrollView>
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <TextView
         android:id="@+id/button"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="0dp"
         android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="15dp"
-        android:background="@drawable/button_blue_background"
+        android:background="@drawable/button_bg_small"
         android:fontFamily="@font/epilogue_medium_500"
         android:gravity="center"
         android:padding="12dp"
-        android:visibility="gone"
         android:text="Next"
         android:textColor="@color/white"
         android:textSize="@dimen/text_20"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+    <TextView
+        android:id="@+id/back"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="15dp"
+        android:background="@drawable/button_bg_small"
+        android:fontFamily="@font/epilogue_medium_500"
+        android:gravity="center"
+        android:padding="12dp"
+        android:text="Previous"
+        android:visibility="gone"
+        android:textColor="@color/white"
+        android:textSize="@dimen/text_20"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintBottom_toBottomOf="parent" />
 
@@ -154,5 +182,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintBottom_toBottomOf="parent" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

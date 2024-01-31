@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <TextView
+        android:id="@+id/question_options"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/btn_enable_disable"
+        android:fontFamily="@font/epilogue_medium_500"
+        android:padding="@dimen/margin_15"
+        android:layout_marginBottom="@dimen/margin_10"
+        android:textColor="@color/white"
+        android:textSize="@dimen/dim_16"
+        tools:text="Other Backward Classes" />
+
+</LinearLayout>
