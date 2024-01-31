@@ -1,12 +1,10 @@
 package com.example.ukbocw
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.View
+import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.WindowInsetsControllerCompat
 import com.example.ukbocw.databinding.ActivityLoginBinding
-import com.example.ukbocw.utils.checkForValidPassword
 
 class LoginActivity : AppCompatActivity() {
     lateinit var binding: ActivityLoginBinding
@@ -23,6 +21,7 @@ class LoginActivity : AppCompatActivity() {
         }
 
     }
+
     private fun signinButtonClick() {
 //        if(checkForValidPassword(binding.etPassword.text.toString())) {
 //            val i = Intent(
@@ -41,8 +40,7 @@ class LoginActivity : AppCompatActivity() {
             this@LoginActivity,
             PersonalQuection::class.java
         )
-        finish()
-        startActivity(i);
+        startActivity(i)
 
     }
 }

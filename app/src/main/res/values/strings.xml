@@ -1,5 +1,8 @@
 <resources>
     <string name="app_name">UKBOCW</string>
+    <string name="fullname">1. Full Name<font color='#FF0000'>*</font></string>
+    <string name="gender">2. Gender<font color='#FF0000'>*</font></string>
+    <string name="family_member_question">12. How many members are here in your Family (Relation) ?</string>
     <string-array name="gender">
         <item>Male</item>
         <item>Female</item>
