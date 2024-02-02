@@ -9,6 +9,7 @@ import androidx.core.view.WindowInsetsControllerCompat
 import com.example.ukbocw.databinding.ActivityLoginBinding
 import com.example.ukbocw.utils.PreferenceHelper
 import com.example.ukbocw.utils.checkForValidPassword
+import com.example.ukbocw.utils.setDebounceOnClickListener
 import com.example.ukbocw.viewModel.LoginViewModel
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -25,7 +26,7 @@ class LoginActivity : AppCompatActivity() {
         WindowInsetsControllerCompat(window, window.decorView).isAppearanceLightStatusBars = true
         window.statusBarColor = getColor(R.color.white)
         sharePreference = PreferenceHelper(this)
-        binding.tvSignIn.setOnClickListener {
+        binding.tvSignIn.setDebounceOnClickListener {
             signInButtonClick()
         }
 
@@ -38,15 +39,18 @@ class LoginActivity : AppCompatActivity() {
                 binding.etPassword.text.toString()
             )
             viewModel.userData.observe(this, { user ->
-                var userEmail = user.user.user_email
                 sharePreference.setDataInPref(
-                    userEmail,
+                    "userAccessToken",
                     user.access_token
+                )
+                sharePreference.setDataInPref(
+                    "userEmail",
+                    user.user.user_email
                 )
                 val intent = Intent(
                     this@LoginActivity,
                     MainActivity::class.java
-                ).putExtra("userEmail", userEmail)
+                )
                 startActivity(intent)
                 finish()
             }
