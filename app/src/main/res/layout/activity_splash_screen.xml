@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".SplashScreen">
+
+
+    <ImageView
+        android:id="@+id/logo"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/dim_150"
+        android:paddingHorizontal="@dimen/dim_20"
+        app:layout_constraintBottom_toTopOf="@id/powred"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.421"
+        app:srcCompat="@drawable/acumen" />
+
+    <TextView
+        android:id="@+id/powred"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/epilogue_bold_700"
+        android:text="Powered by CITSOLS"
+        android:textColor="@color/text_navy"
+        android:textSize="@dimen/text_12"
+        android:layout_marginStart="@dimen/margin_10"
+        android:layout_marginBottom="@dimen/margin_5"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/version"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/epilogue_bold_700"
+        android:text="Version : 1.0.0"
+        android:textColor="@color/text_navy"
+        android:textSize="@dimen/text_12"
+        android:layout_marginEnd="@dimen/margin_10"
+        android:layout_marginBottom="@dimen/margin_5"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>

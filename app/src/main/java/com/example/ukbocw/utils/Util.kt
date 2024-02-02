@@ -7,14 +7,11 @@ import android.graphics.BitmapFactory
 import android.net.Uri
 import android.provider.Settings
 import android.util.Base64
+import android.view.View
 import java.io.ByteArrayOutputStream
 import java.io.File
 import java.io.IOException
-import java.nio.charset.StandardCharsets
-import java.security.PrivateKey
-import java.security.PublicKey
 import java.util.zip.GZIPOutputStream
-import javax.crypto.Cipher
 
 
 @SuppressLint("HardwareIds")
@@ -81,6 +78,14 @@ fun resizeBitmap(getBitmap: Bitmap, maxSize: Int): Bitmap {
     }
     return Bitmap.createScaledBitmap(getBitmap, width, height, false)
 }
+
+fun View.setDebounceOnClickListener(onPerformClick: (View?) -> Unit) {
+    val listener = DebounceClickListener {
+        onPerformClick(it)
+    }
+    setOnClickListener(listener)
+}
+
 
 fun fileToBase64(filePath: Uri, context: Context): String {
     val file = context.contentResolver.openInputStream(filePath)

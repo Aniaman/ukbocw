@@ -13,28 +13,18 @@
         android:layout_height="wrap_content"
         android:fontFamily="@font/epilogue_extra_bold_800"
         android:includeFontPadding="false"
-        android:text="UKBOCW"
+        android:text="Uttarakhand Building &amp; Other Construction Workers’ Welfare Board"
         android:textAllCaps="true"
-        android:layout_marginTop="@dimen/margin_100"
+        android:padding="@dimen/margin_5"
+        android:layout_marginTop="@dimen/margin_150"
         android:textColor="@color/color_heading_one"
         android:textSize="@dimen/textsize_20"
+        android:lineHeight="@dimen/margin_30"
+        android:textAlignment="center"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
-    <TextView
-        android:id="@+id/tv_login"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/epilogue_bold_700"
-        android:includeFontPadding="false"
-        android:text="Login"
-        android:textAllCaps="true"
-        android:layout_marginTop="@dimen/margin_60"
-        android:textColor="@color/secondary_title_color"
-        android:textSize="@dimen/textsize_30"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tv_ptms"
-        app:layout_constraintEnd_toEndOf="parent"/>
+        app:layout_constraintEnd_toEndOf="parent" />
+
 
     <TextView
         android:id="@+id/tv_username"
@@ -46,9 +36,8 @@
         android:textSize="@dimen/text_20"
         android:layout_marginTop="@dimen/margin_50"
         android:layout_marginStart="@dimen/margin_20"
-        android:letterSpacing="0.1"
-        app:layout_constraintTop_toBottomOf="@id/tv_login"
-        app:layout_constraintStart_toStartOf="parent"/>
+        app:layout_constraintTop_toBottomOf="@id/tv_ptms"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <EditText
         android:id="@+id/et_username"
@@ -65,7 +54,7 @@
         android:layout_marginTop="@dimen/margin_10"
         app:layout_constraintStart_toStartOf="@id/tv_username"
         app:layout_constraintTop_toBottomOf="@id/tv_username"
-        app:layout_constraintEnd_toEndOf="parent"/>
+        app:layout_constraintEnd_toEndOf="parent" />
 
     <TextView
         android:id="@+id/username_validation"
@@ -81,8 +70,7 @@
         android:layout_marginEnd="@dimen/margin_20"
         app:layout_constraintStart_toStartOf="@id/et_username"
         app:layout_constraintTop_toBottomOf="@id/et_username"
-        app:layout_constraintEnd_toEndOf="@id/et_username"
-        />
+        app:layout_constraintEnd_toEndOf="@id/et_username" />
 
     <TextView
         android:id="@+id/tv_password"
@@ -90,7 +78,6 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
         android:fontFamily="@font/epilogue_medium_500"
-        android:letterSpacing="0.1"
         android:text="Password"
         android:textColor="@color/secondary_title_color"
         android:textSize="@dimen/text_20"
@@ -112,7 +99,7 @@
         android:inputType="textPassword"
         app:layout_constraintStart_toStartOf="@id/et_username"
         app:layout_constraintTop_toBottomOf="@id/tv_password"
-        app:layout_constraintEnd_toEndOf="parent"/>
+        app:layout_constraintEnd_toEndOf="parent" />
 
     <TextView
         android:id="@+id/password_validation"
@@ -150,12 +137,10 @@
         android:textAllCaps="true"
         android:textColor="@color/white"
         android:textSize="@dimen/text_20"
-        app:layout_constraintEnd_toEndOf="@id/password_validation"
-        app:layout_constraintHorizontal_bias="0.439"
-        app:layout_constraintStart_toStartOf="@id/password_validation"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/password_validation"
         app:layout_goneMarginBottom="@dimen/dim_9" />
-
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
