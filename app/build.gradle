@@ -14,6 +14,13 @@ plugins {
 }
 
 android {
+
+    def versionMajor = 1
+    def versionMinor = 0
+    def versionPatch = 0
+
+    def versionCodeNumber = 1
+
     namespace 'com.example.ukbocw'
     compileSdk 34
 
@@ -83,5 +90,6 @@ dependencies {
     implementation 'androidx.preference:preference-ktx:1.2.1'
     implementation 'com.squareup.retrofit2:converter-scalars:2.9.0'
 
+    implementation "com.amazonaws:aws-android-sdk-s3:2.17.1"
 
 }

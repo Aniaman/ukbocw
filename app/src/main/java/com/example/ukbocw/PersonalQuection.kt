@@ -16,21 +16,32 @@ import androidx.core.content.FileProvider
 import androidx.core.view.WindowInsetsControllerCompat
 import androidx.core.view.isVisible
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.amazonaws.auth.BasicAWSCredentials
+import com.amazonaws.mobileconnectors.s3.transferutility.TransferListener
+import com.amazonaws.mobileconnectors.s3.transferutility.TransferObserver
+import com.amazonaws.mobileconnectors.s3.transferutility.TransferState
+import com.amazonaws.mobileconnectors.s3.transferutility.TransferUtility
+import com.amazonaws.services.s3.AmazonS3Client
 import com.example.ukbocw.adapter.QuestionAdapter
 import com.example.ukbocw.adapter.QuestionNoAnswerAdapter
 import com.example.ukbocw.databinding.ActivityPersonalQuectionBinding
 import com.example.ukbocw.model.FamilyMemberList
 import com.example.ukbocw.model.QuestionOptionType
+import com.example.ukbocw.utils.Constant
 import com.example.ukbocw.utils.generateRandomAlphaNumeric
+import com.example.ukbocw.utils.jsonObjectToBase64
 import com.example.ukbocw.utils.setDebounceOnClickListener
 import com.google.gson.JsonObject
 import java.io.File
+import java.io.FileOutputStream
+import java.io.InputStream
+import java.io.OutputStream
 
 class PersonalQuection : AppCompatActivity(), QuestionClickListener {
     lateinit var personalQuectionBinding: ActivityPersonalQuectionBinding
     var position = 0
     lateinit var imageUri: Uri
-    private val memberList = JsonObject()
+    private val memberList = mutableListOf<FamilyMemberList>()
     private var selectedMemberOccupation: String? = null
     private var selectedMemberEducation: String? = null
     lateinit var questionAdapter: QuestionAdapter
@@ -39,6 +50,11 @@ class PersonalQuection : AppCompatActivity(), QuestionClickListener {
     private var otherValue: Boolean? = null
     var optionClick: Boolean = false
     var optionfilled: Boolean = false
+    private var creds: BasicAWSCredentials =
+        BasicAWSCredentials(Constant.ACCESS_ID, Constant.SECRET_KEY)
+    private var s3Client: AmazonS3Client = AmazonS3Client(creds)
+    lateinit var file: File
+    var documentType: Boolean = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -81,6 +97,7 @@ class PersonalQuection : AppCompatActivity(), QuestionClickListener {
 
         personalQuectionBinding.lDocumentLayout.ivPhotoImage.setDebounceOnClickListener {
             val fileName = generateRandomAlphaNumeric(16)
+            documentType = true
             imageUri = createImage("${fileName}.png")!!
             contract.launch(imageUri)
         }
@@ -88,6 +105,10 @@ class PersonalQuection : AppCompatActivity(), QuestionClickListener {
             val fileName = generateRandomAlphaNumeric(16)
             imageUri = createImage("${fileName}.png")!!
             contract.launch(imageUri)
+        }
+        personalQuectionBinding.submit.setDebounceOnClickListener {
+            val answerString = jsonObjectToBase64(editValueField)
+            Log.d("Answer String", answerString)
         }
     }
 
@@ -111,8 +132,48 @@ class PersonalQuection : AppCompatActivity(), QuestionClickListener {
     }
 
     private val contract = registerForActivityResult(ActivityResultContracts.TakePicture()) {
-        var imageName = imageUri.path
-        println("ImageName : $imageName")
+        val inputStream: InputStream? =
+            contentResolver.openInputStream(imageUri)
+        file = File.createTempFile("image", imageUri.lastPathSegment)
+        val outStream: OutputStream = FileOutputStream(file)
+        outStream.write(inputStream!!.readBytes())
+        uploadImage()
+    }
+
+    private fun uploadImage() {
+        val trans = TransferUtility.builder().context(applicationContext).s3Client(s3Client).build()
+        val observer: TransferObserver =
+            trans.upload(
+                Constant.BUCKET_NAME,
+                imageUri.lastPathSegment,
+                file
+            )//manual storage permission
+        observer.setTransferListener(object : TransferListener {
+            override fun onStateChanged(id: Int, state: TransferState) {
+                if (state == TransferState.COMPLETED) {
+                    if (documentType) {
+                        editValueField.addProperty(
+                            "photo",
+                            s3Client.getResourceUrl(Constant.BUCKET_NAME, imageUri.lastPathSegment)
+                        )
+                        documentType = false
+                    } else {
+                        editValueField.addProperty(
+                            "identityProof",
+                            s3Client.getResourceUrl(Constant.BUCKET_NAME, imageUri.lastPathSegment)
+                        )
+                    }
+                } else if (state == TransferState.FAILED) {
+                    Log.d("msg", "fail")
+                }
+            }
+
+            override fun onProgressChanged(id: Int, bytesCurrent: Long, bytesTotal: Long) {
+            }
+
+            override fun onError(id: Int, ex: Exception) {
+            }
+        })
     }
 
     private fun setFamilyMemberDropdown() {
@@ -161,7 +222,7 @@ class PersonalQuection : AppCompatActivity(), QuestionClickListener {
                     personalQuectionBinding.etAnswer.text.toString()
                 )
                 personalQuectionBinding.etAnswer.isVisible = false
-                position = 120
+                position = 1
                 personalQuectionBinding.etAnswer.hint = ""
                 personalQuectionBinding.questions.text = getString(R.string.gender)
                 val question = QuestionOptionType(
@@ -2460,14 +2521,13 @@ class PersonalQuection : AppCompatActivity(), QuestionClickListener {
 
 
     private fun setFamilyMember() {
-        memberList.addProperty(
-            "memeber",
+        memberList.add(
             FamilyMemberList(
                 personalQuectionBinding.lFamilyMemberLayout.etFullName.text.toString(),
                 selectedMemberOccupation,
                 personalQuectionBinding.lFamilyMemberLayout.etOtherOccupation.text.toString(),
                 selectedMemberOccupation
-            ).toString()
+            )
         )
         optionClick = true
         personalQuectionBinding.lFamilyMemberLayout.etFullName.text.clear()

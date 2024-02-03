@@ -5,6 +5,17 @@
     android:layout_height="match_parent"
     android:background="@color/background_gray_lightest">
 
+    <ImageView
+        android:id="@+id/tv_ptms"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/dim_150"
+        android:paddingHorizontal="@dimen/dim_20"
+        android:layout_marginTop="@dimen/dim_100"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/acumen" />
+
     <TextView
         android:id="@+id/button"
         android:layout_width="wrap_content"
@@ -16,12 +27,12 @@
         android:fontFamily="@font/epilogue_medium_500"
         android:gravity="center"
         android:padding="12dp"
+        android:layout_marginTop="@dimen/margin_100"
         android:text="Start Survey"
         android:textColor="@color/white"
         android:textSize="@dimen/text_20"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_ptms" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

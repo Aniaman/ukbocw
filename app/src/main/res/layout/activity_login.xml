@@ -7,23 +7,16 @@
     android:background="@color/white"
     tools:context=".MainActivity">
 
-    <TextView
+    <ImageView
         android:id="@+id/tv_ptms"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/epilogue_extra_bold_800"
-        android:includeFontPadding="false"
-        android:text="Uttarakhand Building &amp; Other Construction Workers’ Welfare Board"
-        android:textAllCaps="true"
-        android:padding="@dimen/margin_5"
-        android:layout_marginTop="@dimen/margin_150"
-        android:textColor="@color/color_heading_one"
-        android:textSize="@dimen/textsize_20"
-        android:lineHeight="@dimen/margin_30"
-        android:textAlignment="center"
+        android:layout_height="@dimen/dim_150"
+        android:paddingHorizontal="@dimen/dim_20"
+        android:layout_marginTop="@dimen/dim_100"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:srcCompat="@drawable/acumen" />
 
 
     <TextView

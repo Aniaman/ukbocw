@@ -8,6 +8,7 @@ import android.net.Uri
 import android.provider.Settings
 import android.util.Base64
 import android.view.View
+import com.google.gson.JsonObject
 import java.io.ByteArrayOutputStream
 import java.io.File
 import java.io.IOException
@@ -61,6 +62,14 @@ fun generateRandomAlphaNumeric(length: Int): String {
     return (1..length)
         .map { chars.random() }
         .joinToString("")
+}
+
+fun jsonObjectToBase64(jsonObject: JsonObject): String {
+    val jsonString = jsonObject.toString()
+
+    val base64String = Base64.encodeToString(jsonString.toByteArray(), Base64.DEFAULT)
+
+    return base64String
 }
 
 fun resizeBitmap(getBitmap: Bitmap, maxSize: Int): Bitmap {
