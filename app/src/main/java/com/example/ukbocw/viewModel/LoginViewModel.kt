@@ -4,13 +4,12 @@ import android.app.Application
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.viewModelScope
 import com.example.ukbocw.data.SurveyResponse
 import com.example.ukbocw.data.users
 import com.example.ukbocw.repository.LoginRepository
+import com.example.ukbocw.utils.ResponseWrapper
 import com.google.gson.JsonObject
 import dagger.hilt.android.lifecycle.HiltViewModel
-import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @HiltViewModel
@@ -20,28 +19,23 @@ class LoginViewModel @Inject constructor(
 ) :
     AndroidViewModel(application) {
 
-    private val _userData = MutableLiveData<users>()
-    val userData: LiveData<users> get() = _userData
+    private val _isLoading = MutableLiveData<Boolean>()
+    val isLoading: LiveData<Boolean>
+        get() = _isLoading
+
+
     private val _surveyResponse = MutableLiveData<SurveyResponse>()
     val surveyResponse: LiveData<SurveyResponse> get() = _surveyResponse
 
-
-    fun userAuthentication(email: String, password: String) =
-        viewModelScope.launch {
-            loginRepository.authentication(userObject(email, password)).let { response ->
-                if (response.isSuccessful) {
-                    _userData.value = response.body()
-                }
-            }
-        }
-
-    fun survey(surveyData: JsonObject, token: String) = viewModelScope.launch {
-        loginRepository.survey(surveyData, token).let { response ->
-            if (response.isSuccessful) {
-                _surveyResponse.value = response.body()
-            }
-        }
+    fun setIsLoading(isLoading: Boolean) {
+        _isLoading.value = isLoading
     }
+
+    fun userAuthentication(email: String, password: String): LiveData<ResponseWrapper<users>> =
+        loginRepository.authentication(userObject(email, password))
+
+    fun survey(surveyData: JsonObject, token: String): LiveData<ResponseWrapper<SurveyResponse>> =
+        loginRepository.survey(surveyData, token)
 
 
     private fun userObject(email: String, password: String): JsonObject {

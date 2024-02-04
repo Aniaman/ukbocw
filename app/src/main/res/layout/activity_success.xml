@@ -40,9 +40,10 @@
         android:fontFamily="@font/epilogue_semibold_600"
         android:text="Survey Id : "
         android:paddingStart="@dimen/margin_15"
-        android:layout_marginVertical="@dimen/margin_30"
+        android:layout_marginVertical="@dimen/margin_80"
         android:layout_marginStart="@dimen/margin_15"
         android:textSize="@dimen/textsize_18"
+        android:textColor="@color/secondary_title_color"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tv_Survey" />
 
@@ -52,10 +53,10 @@
         android:layout_height="wrap_content"
         android:fontFamily="@font/epilogue_semibold_600"
         tools:text="65bddeac054083e64e0d93f2"
-        android:layout_marginVertical="@dimen/margin_30"
         android:textSize="@dimen/textsize_18"
+        android:textColor="@color/green"
         app:layout_constraintStart_toEndOf="@id/tv_survey_text"
-        app:layout_constraintTop_toBottomOf="@id/tv_Survey"
+        app:layout_constraintTop_toTopOf="@id/tv_survey_text"
         app:layout_constraintEnd_toEndOf="parent" />
 
     <TextView

@@ -25,10 +25,10 @@ sealed class ApiResponse<T> {
             } else {
 
                 ApiErrorResponse(
-                    null,
-                    "unknown error",
+                    response.body(),
+                    response.message(),
                     response.code(),
-                    ""
+                    response.message()
                 )
             }
         }
