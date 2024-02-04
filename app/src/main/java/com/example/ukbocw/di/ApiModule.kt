@@ -3,6 +3,7 @@ package com.example.ptms.di
 
 import com.example.ukbocw.retrofit.ApiService
 import com.example.ukbocw.retrofit.ApiService.Companion.ENDPOINT
+import com.example.ukbocw.utils.LiveDataCallAdapterFactory
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -40,9 +41,21 @@ object ApiModule {
         return Retrofit.Builder()
             .baseUrl(ENDPOINT)
             .addConverterFactory(GsonConverterFactory.create())
+            .addCallAdapterFactory(LiveDataCallAdapterFactory())
             .client(client)
             .build()
     }
+
+//    @Provides
+//    @Singleton
+//    fun provideRetrofitClient(okHttpClient: OkHttpClient): Retrofit {
+//        return Retrofit.Builder()
+//            .baseUrl(ENDPOINT)
+//            .client(okHttpClient)
+//            .addConverterFactory(GsonConverterFactory.create())
+//            .addCallAdapterFactory(LiveDataCallAdapterFactory())
+//            .build()
+//    }
 
     @Provides
     @Singleton

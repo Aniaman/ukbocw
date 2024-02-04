@@ -16,6 +16,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.FileProvider
 import androidx.core.view.WindowInsetsControllerCompat
 import androidx.core.view.isVisible
+import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.amazonaws.auth.BasicAWSCredentials
 import com.amazonaws.mobileconnectors.s3.transferutility.TransferListener
@@ -28,7 +29,10 @@ import com.example.ukbocw.adapter.QuestionNoAnswerAdapter
 import com.example.ukbocw.databinding.ActivityPersonalQuectionBinding
 import com.example.ukbocw.model.QuestionOptionType
 import com.example.ukbocw.utils.Constant
+import com.example.ukbocw.utils.CustomCircularProgress
 import com.example.ukbocw.utils.PreferenceHelper
+import com.example.ukbocw.utils.Status
+import com.example.ukbocw.utils.displayMessage
 import com.example.ukbocw.utils.generateRandomAlphaNumeric
 import com.example.ukbocw.utils.jsonObjectToBase64
 import com.example.ukbocw.utils.setDebounceOnClickListener
@@ -115,6 +119,8 @@ class PersonalQuection : AppCompatActivity(), QuestionClickListener {
             personalQuectionBinding.submit.isVisible = true
         }
         personalQuectionBinding.submit.setDebounceOnClickListener {
+            viewModel.setIsLoading(true)
+            showLoader()
             val survey = JsonObject()
             val surveyString = jsonObjectToBase64(editValueField)
             survey.addProperty("survey", surveyString)
@@ -126,14 +132,48 @@ class PersonalQuection : AppCompatActivity(), QuestionClickListener {
     }
 
     private fun saveSurveyData(surveyString: JsonObject, token: String) {
+        viewModel.survey(surveyString, token).observe(this, Observer {
+            it?.let { response ->
+                when (response.status) {
+                    Status.LOADING -> {}
+                    Status.SUCCESS -> {
+                        viewModel.setIsLoading(false)
+                        showLoader()
+                        val surveyId = response.data?.data?.`$oid`
+                        val intent = Intent(
+                            this@PersonalQuection,
+                            Success::class.java
+                        ).putExtra("surveyId", surveyId)
+                        startActivity(intent)
+                        finish()
+                    }
 
-        viewModel.survey(surveyString, token)
-        viewModel.surveyResponse.observe(this, {
-            var surveyId = it.data.`$oid`
-            val intent = Intent(this, Success::class.java).putExtra("surveyId", surveyId)
-            startActivity(intent)
-            finish()
+                    Status.ERROR -> {
+                        viewModel.setIsLoading(false)
+                        showLoader()
+                        displayMessage(
+                            this,
+                            "Something Went Wrong, Please Try After Sometime"
+                        )
+                    }
+
+                    else -> {}
+                }
+            }
         })
+    }
+
+    private fun showLoader() {
+        viewModel.isLoading.observe(
+            this,
+            Observer {
+                if (it) {
+                    CustomCircularProgress.getInstance().show(this)
+                } else {
+                    CustomCircularProgress.getInstance().dismiss()
+                }
+            }
+        )
     }
 
     private fun hideKeyboard() {
@@ -156,6 +196,8 @@ class PersonalQuection : AppCompatActivity(), QuestionClickListener {
     }
 
     private val contract = registerForActivityResult(ActivityResultContracts.TakePicture()) {
+        viewModel.setIsLoading(true)
+        showLoader()
         val inputStream: InputStream? =
             contentResolver.openInputStream(imageUri)
         file = File.createTempFile("image", imageUri.lastPathSegment)
@@ -193,13 +235,10 @@ class PersonalQuection : AppCompatActivity(), QuestionClickListener {
             }
 
             override fun onProgressChanged(id: Int, bytesCurrent: Long, bytesTotal: Long) {
-                if (bytesCurrent != bytesTotal) {
-                    val progress = 100 * bytesCurrent / bytesTotal
-                    personalQuectionBinding.lDocumentLayout.progressBar.isVisible = true
-                    personalQuectionBinding.lDocumentLayout.progressBar.progress = progress.toInt()
+                if (bytesCurrent == bytesTotal) {
+                    viewModel.setIsLoading(false)
+                    showLoader()
                     showToast("Image Upload Successful")
-                } else {
-                    personalQuectionBinding.lDocumentLayout.progressBar.isVisible = false
                 }
             }
 
@@ -255,7 +294,7 @@ class PersonalQuection : AppCompatActivity(), QuestionClickListener {
                     personalQuectionBinding.etAnswer.text.toString()
                 )
                 personalQuectionBinding.etAnswer.isVisible = false
-                position = 1
+                position = 120
                 personalQuectionBinding.etAnswer.hint = ""
                 personalQuectionBinding.questions.text = getString(R.string.gender)
                 val question = QuestionOptionType(

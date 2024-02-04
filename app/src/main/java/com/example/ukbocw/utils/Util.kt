@@ -8,6 +8,7 @@ import android.net.Uri
 import android.provider.Settings
 import android.util.Base64
 import android.view.View
+import android.widget.Toast
 import com.google.gson.JsonObject
 import java.io.ByteArrayOutputStream
 import java.io.File
@@ -62,6 +63,10 @@ fun generateRandomAlphaNumeric(length: Int): String {
     return (1..length)
         .map { chars.random() }
         .joinToString("")
+}
+
+fun displayMessage(context: Context?, toastString: String?) {
+    Toast.makeText(context, toastString, Toast.LENGTH_SHORT).show()
 }
 
 fun jsonObjectToBase64(jsonObject: JsonObject): String {
