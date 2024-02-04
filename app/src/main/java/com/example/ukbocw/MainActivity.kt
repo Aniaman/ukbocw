@@ -11,7 +11,9 @@ import androidx.core.view.WindowInsetsControllerCompat
 import com.example.ukbocw.databinding.ActivityMainBinding
 import com.example.ukbocw.utils.PreferenceHelper
 import com.example.ukbocw.utils.setDebounceOnClickListener
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
     private lateinit var sharePreference: PreferenceHelper

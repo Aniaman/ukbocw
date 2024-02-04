@@ -20,12 +20,15 @@
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
-        android:icon="@mipmap/ic_acumen_logo_foreground"
+        android:icon="@mipmap/ic_acumen_foreground"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_acumen_logo_foreground"
+        android:roundIcon="@mipmap/ic_acumen_foreground"
         android:supportsRtl="true"
         android:theme="@style/Theme.UKBOCW"
         tools:targetApi="31">
+        <activity
+            android:name=".Success"
+            android:exported="false" />
         <activity
             android:name=".RootDeviceCheck"
             android:exported="false" />

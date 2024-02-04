@@ -11,6 +11,7 @@ import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
+import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.FileProvider
 import androidx.core.view.WindowInsetsControllerCompat
@@ -25,23 +26,26 @@ import com.amazonaws.services.s3.AmazonS3Client
 import com.example.ukbocw.adapter.QuestionAdapter
 import com.example.ukbocw.adapter.QuestionNoAnswerAdapter
 import com.example.ukbocw.databinding.ActivityPersonalQuectionBinding
-import com.example.ukbocw.model.FamilyMemberList
 import com.example.ukbocw.model.QuestionOptionType
 import com.example.ukbocw.utils.Constant
+import com.example.ukbocw.utils.PreferenceHelper
 import com.example.ukbocw.utils.generateRandomAlphaNumeric
 import com.example.ukbocw.utils.jsonObjectToBase64
 import com.example.ukbocw.utils.setDebounceOnClickListener
+import com.example.ukbocw.viewModel.LoginViewModel
 import com.google.gson.JsonObject
+import dagger.hilt.android.AndroidEntryPoint
 import java.io.File
 import java.io.FileOutputStream
 import java.io.InputStream
 import java.io.OutputStream
 
+@AndroidEntryPoint
 class PersonalQuection : AppCompatActivity(), QuestionClickListener {
     lateinit var personalQuectionBinding: ActivityPersonalQuectionBinding
     var position = 0
     lateinit var imageUri: Uri
-    private val memberList = mutableListOf<FamilyMemberList>()
+    private val memberList = JsonObject()
     private var selectedMemberOccupation: String? = null
     private var selectedMemberEducation: String? = null
     lateinit var questionAdapter: QuestionAdapter
@@ -55,6 +59,8 @@ class PersonalQuection : AppCompatActivity(), QuestionClickListener {
     private var s3Client: AmazonS3Client = AmazonS3Client(creds)
     lateinit var file: File
     var documentType: Boolean = false
+    private val viewModel by viewModels<LoginViewModel>()
+    private lateinit var sharePreference: PreferenceHelper
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -63,7 +69,7 @@ class PersonalQuection : AppCompatActivity(), QuestionClickListener {
         WindowInsetsControllerCompat(window, window.decorView).isAppearanceLightStatusBars = true
         window.statusBarColor = getColor(R.color.white)
 
-
+        sharePreference = PreferenceHelper(this)
         personalQuectionBinding.button.setDebounceOnClickListener {
             if (personalQuectionBinding.etAnswer.text.isNotBlank()) {
                 optionfilled = true
@@ -105,11 +111,29 @@ class PersonalQuection : AppCompatActivity(), QuestionClickListener {
             val fileName = generateRandomAlphaNumeric(16)
             imageUri = createImage("${fileName}.png")!!
             contract.launch(imageUri)
+            personalQuectionBinding.button.isVisible = false
+            personalQuectionBinding.submit.isVisible = true
         }
         personalQuectionBinding.submit.setDebounceOnClickListener {
-            val answerString = jsonObjectToBase64(editValueField)
-            Log.d("Answer String", answerString)
+            val survey = JsonObject()
+            val surveyString = jsonObjectToBase64(editValueField)
+            survey.addProperty("survey", surveyString)
+            saveSurveyData(
+                survey,
+                sharePreference.getDataFromPref("userAccessToken").toString()
+            )
         }
+    }
+
+    private fun saveSurveyData(surveyString: JsonObject, token: String) {
+
+        viewModel.survey(surveyString, token)
+        viewModel.surveyResponse.observe(this, {
+            var surveyId = it.data.`$oid`
+            val intent = Intent(this, Success::class.java).putExtra("surveyId", surveyId)
+            startActivity(intent)
+            finish()
+        })
     }
 
     private fun hideKeyboard() {
@@ -169,9 +193,18 @@ class PersonalQuection : AppCompatActivity(), QuestionClickListener {
             }
 
             override fun onProgressChanged(id: Int, bytesCurrent: Long, bytesTotal: Long) {
+                if (bytesCurrent != bytesTotal) {
+                    val progress = 100 * bytesCurrent / bytesTotal
+                    personalQuectionBinding.lDocumentLayout.progressBar.isVisible = true
+                    personalQuectionBinding.lDocumentLayout.progressBar.progress = progress.toInt()
+                    showToast("Image Upload Successful")
+                } else {
+                    personalQuectionBinding.lDocumentLayout.progressBar.isVisible = false
+                }
             }
 
             override fun onError(id: Int, ex: Exception) {
+                showToast(ex.message.toString())
             }
         })
     }
@@ -2504,12 +2537,10 @@ class PersonalQuection : AppCompatActivity(), QuestionClickListener {
                     "washroom_construction_challenge_face",
                     personalQuectionBinding.etAnswer.text.toString()
                 )
+                personalQuectionBinding.toolbarLayout.tvToolbar.text = "Document Upload"
                 personalQuectionBinding.questions.isVisible = false
                 personalQuectionBinding.etAnswer.isVisible = false
                 personalQuectionBinding.clBody.isVisible = false
-                personalQuectionBinding.back.isVisible = false
-                personalQuectionBinding.button.isVisible = false
-                personalQuectionBinding.submit.isVisible = true
                 personalQuectionBinding.lDocumentLayout.root.isVisible = true
             }
 
@@ -2521,13 +2552,15 @@ class PersonalQuection : AppCompatActivity(), QuestionClickListener {
 
 
     private fun setFamilyMember() {
-        memberList.add(
-            FamilyMemberList(
+
+        memberList.addProperty(
+            memberList.size().toString(),
+            listOf(
                 personalQuectionBinding.lFamilyMemberLayout.etFullName.text.toString(),
                 selectedMemberOccupation,
                 personalQuectionBinding.lFamilyMemberLayout.etOtherOccupation.text.toString(),
                 selectedMemberOccupation
-            )
+            ).toString()
         )
         optionClick = true
         personalQuectionBinding.lFamilyMemberLayout.etFullName.text.clear()
@@ -2935,7 +2968,7 @@ class PersonalQuection : AppCompatActivity(), QuestionClickListener {
         } else {
             editValueField.addProperty(question, option)
         }
-        Log.d("answer", "$editValueField")
+        //Log.d("answer", "$editValueField")
     }
 
 
