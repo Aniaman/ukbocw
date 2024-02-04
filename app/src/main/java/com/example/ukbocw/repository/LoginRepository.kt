@@ -9,5 +9,8 @@ class LoginRepository @Inject constructor(private val apiServices: ApiService) {
     private val authenticatorHeader = AuthenticatorHeader()
 
     suspend fun authentication(userData: JsonObject) =
-        apiServices.authentication(userData, authenticatorHeader.getMainCustomerHeader())
+        apiServices.authentication(userData, authenticatorHeader.getAuthHeader())
+
+    suspend fun survey(surveyData: JsonObject, token: String) =
+        apiServices.survey(surveyData, authenticatorHeader.getSurveyHeader(token))
 }

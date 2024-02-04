@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_gray_lightest"
+    tools:context=".Success">
+
+    <ImageView
+        android:id="@+id/success_icon"
+        android:layout_width="@dimen/margin_250"
+        android:layout_height="@dimen/margin_150"
+        android:layout_gravity="center"
+        android:layout_marginTop="124dp"
+        android:background="@drawable/ic_card"
+        android:gravity="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_Survey"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="@dimen/margin_5"
+        android:text="Survey Successful"
+        android:textColor="#3fcb7f"
+        android:gravity="center"
+        android:fontFamily="@font/epilogue_bold_700"
+        android:textSize="@dimen/textsize_28"
+        app:layout_constraintTop_toBottomOf="@id/success_icon"
+        app:layout_constraintStart_toStartOf="@id/success_icon"
+        app:layout_constraintEnd_toEndOf="@id/success_icon" />
+
+    <TextView
+        android:id="@+id/tv_survey_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/epilogue_semibold_600"
+        android:text="Survey Id : "
+        android:paddingStart="@dimen/margin_15"
+        android:layout_marginVertical="@dimen/margin_30"
+        android:layout_marginStart="@dimen/margin_15"
+        android:textSize="@dimen/textsize_18"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_Survey" />
+
+    <TextView
+        android:id="@+id/tv_survey_id"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/epilogue_semibold_600"
+        tools:text="65bddeac054083e64e0d93f2"
+        android:layout_marginVertical="@dimen/margin_30"
+        android:textSize="@dimen/textsize_18"
+        app:layout_constraintStart_toEndOf="@id/tv_survey_text"
+        app:layout_constraintTop_toBottomOf="@id/tv_Survey"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <TextView
+        android:id="@+id/status_close"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_gravity="center_horizontal"
+        android:background="@color/colorPrimary"
+        android:gravity="center"
+        android:padding="@dimen/margin_16"
+        android:text="Close"
+        android:textColor="@color/white"
+        android:textSize="@dimen/textsize_14"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

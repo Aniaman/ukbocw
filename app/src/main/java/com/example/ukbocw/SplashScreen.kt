@@ -5,12 +5,13 @@ import android.os.Bundle
 import android.os.Handler
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.WindowInsetsControllerCompat
-import com.example.ukbocw.databinding.ActivityPersonalQuectionBinding
 import com.example.ukbocw.databinding.ActivitySplashScreenBinding
 import com.example.ukbocw.utils.DeviceRootState
 import com.example.ukbocw.utils.PreferenceHelper
 import com.example.ukbocw.utils.RootCheck
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class SplashScreen : AppCompatActivity() {
     private lateinit var sharePreference: PreferenceHelper
     private lateinit var binding: ActivitySplashScreenBinding
@@ -35,7 +36,10 @@ class SplashScreen : AppCompatActivity() {
         window.statusBarColor = getColor(R.color.white)
         sharePreference = PreferenceHelper(this)
 
-        binding.version.text = "App-version"
+
+
+        binding.version.text =
+            "App-version ${packageManager.getPackageInfo(packageName, 0).versionName}"
         val userAccess = sharePreference.getDataFromPref("userAccessToken")
 
         if (userAccess!!.isEmpty()) {

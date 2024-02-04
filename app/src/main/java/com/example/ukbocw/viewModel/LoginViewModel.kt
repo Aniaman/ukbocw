@@ -5,6 +5,7 @@ import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
+import com.example.ukbocw.data.SurveyResponse
 import com.example.ukbocw.data.users
 import com.example.ukbocw.repository.LoginRepository
 import com.google.gson.JsonObject
@@ -21,9 +22,8 @@ class LoginViewModel @Inject constructor(
 
     private val _userData = MutableLiveData<users>()
     val userData: LiveData<users> get() = _userData
-
-    private val _accessToken = MutableLiveData<String>()
-    val accessToken: MutableLiveData<String> get() = _accessToken
+    private val _surveyResponse = MutableLiveData<SurveyResponse>()
+    val surveyResponse: LiveData<SurveyResponse> get() = _surveyResponse
 
 
     fun userAuthentication(email: String, password: String) =
@@ -34,6 +34,14 @@ class LoginViewModel @Inject constructor(
                 }
             }
         }
+
+    fun survey(surveyData: JsonObject, token: String) = viewModelScope.launch {
+        loginRepository.survey(surveyData, token).let { response ->
+            if (response.isSuccessful) {
+                _surveyResponse.value = response.body()
+            }
+        }
+    }
 
 
     private fun userObject(email: String, password: String): JsonObject {
